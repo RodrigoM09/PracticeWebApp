@@ -11,6 +11,7 @@
         Password: <input type="password" name="password">
         <button type="submit">Submit</button>
     </form>
+    <pre>${errorMessage}</pre>
 
 </body>
 </html>

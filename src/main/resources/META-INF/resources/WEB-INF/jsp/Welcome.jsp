@@ -6,6 +6,5 @@
 </head>
 <body>
     <div>Welcome to in 28 minutes, ${name}!</div>
-    <div>Current Password: ${password}</div>
 </body>
 </html>
