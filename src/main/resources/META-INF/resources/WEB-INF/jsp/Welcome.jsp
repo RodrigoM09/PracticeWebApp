@@ -6,5 +6,6 @@
 </head>
 <body>
     <div>Welcome to in 28 minutes, ${name}!</div>
+    <div><a href="listTodos.jsp">Manage your todos</a></div>
 </body>
 </html>

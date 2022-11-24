@@ -29,7 +29,6 @@ public class LoginController {
         if(authenticationService.authentication(name, password)) {
 
             model.addAttribute("name", name);
-            model.addAttribute("password", password);
             //Authentication
             //name - Rodrigo
             //password - genius

@@ -5,7 +5,7 @@
     <title>List of Todos</title>
 </head>
 <body>
-    <div>Welcome to in 28 minutes, ${name}!</div><br>
+    <div>Welcome ${name}!</div><br>
     <div>Your todos are: ${todos}</div>
 </body>
 </html>
