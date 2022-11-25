@@ -5,7 +5,7 @@
     <title>Welcome Page</title>
 </head>
 <body>
-    <div>Welcome to in 28 minutes, ${name}!</div>
+    <div>Welcome, ${name}!</div>
     <div><a href="list-Todos">Manage your todos</a></div>
 </body>
 </html>
