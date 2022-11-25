@@ -7,7 +7,7 @@
 <body>
     <div class="container">
     <div>Welcome, ${name}!</div>
-    <div><a href="list-Todos">Manage your todos</a></div>
+    <div><a href="list-todos">Manage your todos</a></div>
     </div>
 </body>
 </html>
