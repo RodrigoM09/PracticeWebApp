@@ -5,13 +5,14 @@
     <title>Login</title>
 </head>
 <body>
-    <h1>Welcome to the login page!!</h1>
-    <form method="post">
-        Name: <input type="text" name="name"><br>
-        Password: <input type="password" name="password">
-        <button type="submit">Submit</button>
-    </form>
-    <pre>${errorMessage}</pre>
-
+    <div class="container">
+        <h1>Welcome to the login page!!</h1>
+        <form method="post">
+            Name: <input type="text" name="name"><br>
+            Password: <input type="password" name="password">
+            <button type="submit">Submit</button>
+        </form>
+        <pre>${errorMessage}</pre>
+    </div>
 </body>
 </html>

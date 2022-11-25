@@ -5,7 +5,9 @@
     <title>Welcome Page</title>
 </head>
 <body>
+    <div class="container">
     <div>Welcome, ${name}!</div>
     <div><a href="list-Todos">Manage your todos</a></div>
+    </div>
 </body>
 </html>
