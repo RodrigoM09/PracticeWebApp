@@ -29,7 +29,7 @@ public class TodoController {
     }
 
 
-    // ADD NEW TODO METHODS ------------------------------------------->
+//     ADD NEW TODO METHODS ------------------------------------------->
     @GetMapping("add-todo")
     public String showNewTodoPage(ModelMap model){
         String username = (String)model.get("name");
@@ -45,7 +45,7 @@ public class TodoController {
         }
         String username = (String)model.get("name");
         todoService.addTodo(username, todo.getDescription(),
-                LocalDate.now().plusYears(1), false);
+                todo.getTargetDate(), false);
         return "redirect:list-todos";
     }
 
