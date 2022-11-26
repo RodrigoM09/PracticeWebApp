@@ -1,8 +1,10 @@
 package com.in28minutes.springboot.myfirstwebapp.todo;
 
+import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
@@ -34,7 +36,10 @@ public class TodoController {
     }
 
     @PostMapping("add-todo")
-    public String addNewTodo(ModelMap model, Todo todo) {
+    public String addNewTodo(ModelMap model, @Valid Todo todo, BindingResult result) {
+        if(result.hasErrors()){
+            return "todo";
+        }
         String username = (String)model.get("name");
         todoService.addTodo(username, todo.getDescription(),
                 LocalDate.now().plusYears(1), false);
