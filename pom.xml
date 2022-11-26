@@ -12,17 +12,12 @@
 	<artifactId>myfirstwebapp</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>myfirstwebapp</name>
+	<packaging>war</packaging>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>19</java.version>
 	</properties>
 	<dependencies>
-		<dependency>
-		<groupId>com.spring</groupId>
-		<artifactId>SpringgMVC</artifactId>
-		<version>1.0</version>
-		<packaging>war</packaging>
-		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
@@ -67,7 +62,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-validation</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
