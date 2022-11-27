@@ -1,13 +1,7 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Welcome Page</title>
-</head>
-<body>
+<%@include file="common/header.jspf"%>
+<%@include file="common/navigation.jspf"%>
     <div class="container">
-    <div>Welcome, ${name}!</div>
-    <div><a href="list-todos">Manage your todos</a></div>
+        <div>Welcome, ${name}!</div>
+        <div><a href="list-todos">Manage your todos</a></div>
     </div>
-</body>
-</html>
+<%@include file="common/footer.jspf"%>
