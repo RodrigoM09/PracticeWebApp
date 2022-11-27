@@ -3,6 +3,8 @@ package com.in28minutes.springboot.myfirstwebapp.login;
 import jakarta.servlet.http.PushBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -21,11 +23,15 @@ public class WelcomeController {
 
     @GetMapping("/")
     public String goToWelcome(ModelMap model){
-        model.put("name", "Rodrigo");
+        model.put("name", getLoggedinUsername());
         return "Welcome";
     }
 
-
+    private String getLoggedinUsername(){
+        Authentication authentication =
+            SecurityContextHolder.getContext().getAuthentication();
+       return authentication.getName();
+    }
 //    @RequestMapping(value="login",method = RequestMethod.POST)
 //    public String goToWelcome(@RequestParam String name, @RequestParam String password, Model model){
 //

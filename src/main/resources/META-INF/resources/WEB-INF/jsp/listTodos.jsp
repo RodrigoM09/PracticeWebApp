@@ -2,7 +2,7 @@
         <%@include file="common/navigation.jspf"%>
         <%--CONTAINER WITH TODOS TABLE--------------------------------------------------------%>
         <div class="container">
-            <div>Welcome ${name}!</div><br>
+            <div>Welcome, ${name}!</div><br>
             <hr>
             <h1>Your todos:</h1>
             <table class="table">
