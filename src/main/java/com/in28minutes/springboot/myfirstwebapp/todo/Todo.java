@@ -33,7 +33,6 @@ public class Todo {
 
 
     public Todo() {
-
     }
 
     public int getId() {
