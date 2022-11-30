@@ -14,13 +14,11 @@ import java.util.List;
 @Controller
 @SessionAttributes("name")
 public class TodoControllerJpa {
-    public TodoControllerJpa(TodoService todoService, TodoRepository todoRepository) {
+    public TodoControllerJpa(TodoRepository todoRepository) {
         super();
-        this.todoService = todoService;
         this.todoRepository = todoRepository;
     }
 
-    private TodoService todoService;
 
     private TodoRepository todoRepository;
 
