@@ -1,4 +1,4 @@
-package com.in28minutes.springboot.myfirstwebapp.login;
+package com.in28minutes.springboot.MyFirstWebApplication.login;
 
 import jakarta.servlet.http.PushBuilder;
 import org.slf4j.Logger;

@@ -1,4 +1,4 @@
-package com.in28minutes.springboot.myfirstwebapp.todo;
+package com.in28minutes.springboot.MyFirstWebApplication.todo;
 
 
 import jakarta.persistence.Entity;
@@ -22,13 +22,19 @@ public class Todo {
         @Id
         @GeneratedValue
         private int id;
-
+        @Column
         private String username;
-
         @Size(min=10, message = "Enter at least 10 characters")
+        @Column
         private String description;
+        @Column
         private LocalDate targetDate;
+        @Column
         private boolean done;
+
+        @ManyToOne
+        @JoinColumn(name="user_id")
+        private User user;
 
 
 

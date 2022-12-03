@@ -1,13 +1,13 @@
-package com.in28minutes.springboot.myfirstwebapp;
+package com.in28minutes.springboot.MyFirstWebApplication;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MyfirstwebappApplication {
+public class MyfirstWebApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MyfirstwebappApplication.class, args);
+		SpringApplication.run(MyfirstWebApplication.class, args);
 	}
 
 }

@@ -1,4 +1,4 @@
-package com.in28minutes.springboot.myfirstwebapp.security;
+package com.in28minutes.springboot.MyFirstWebApplication.security;
 
 
 import jakarta.servlet.Filter;
