@@ -1,35 +1,36 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
-<head>
-    <div th:replace="partials/posts-partials.html :: myheader('Posts')"></div>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html" lang="en">
+<head th:replace="partials/posts-partials.html :: myheader('Create a New Todo')">
+    <title id="pageTitle"></title>
 </head>
+<body>
 <nav th:replace="partials/posts-partials.html :: mynav"></nav>
             <div class="container">
 
                 <h1>Enter Todo Details</h1>
 
-                <form:form method="post" modelAttribute="todo">
+                <form method="post" modelAttribute="todo">
 
-        <%--            DESCRIPTION LABEL AND INPUT----------------------------------%>
+<!--                    DESCRIPTION LABEL AND INPUT------------------------------------->
                     <fieldset class="mb-3">
-                        <form:label path="description">Description:</form:label>
-                        <form:input type="text" path="description" required="required"/>
-                        <form:errors path="description" cssClass="text-warning"/>
+                        <label th:path="description" for="description">Description:</label>
+                        <input type="text" th:path="description" required="required" id="description"/>
+                        <span id="description.errors" class="error">Description is required</span>
                     </fieldset>
 
-        <%--            TARGET DATE LABEL AND INPUT-----------------------------------%>
+<!--                    TARGET DATE LABEL AND INPUT------------------------------------->
                     <fieldset class="mb-3">
-                        <form:label path="targetDate">Target Date:</form:label>
-                        <form:input type="text" path="targetDate" required="required"/>
-                        <form:errors path="targetDate" cssClass="text-warning"/>
+                        <label th:path="targetDate" for="targetDate">Target Date:</label>
+                        <input type="text" th:path="targetDate" id="targetDate" required="required"/>
+                        <span id="targetDate.errors" class="error">Target date is required</span>
                     </fieldset>
 
-                    <form:input type="hidden" path="done"/>
-                    <form:input type="hidden" path="id"/>
+                    <input type="hidden" th:path="done"/>
+                    <input type="hidden" th:path="id"/>
                     <input type="submit" class="btn btn-success">
-                </form:form>
+                </form>
             </div>
-            <div th:replace="partials/posts-partials.html :: foot"></div>
+            <div th:replace="partials/posts-partials.html :: footer"></div>
             <script type="text/javascript">
                 $('#targetDate').datepicker({
                     format: 'yyyy-mm-dd'
