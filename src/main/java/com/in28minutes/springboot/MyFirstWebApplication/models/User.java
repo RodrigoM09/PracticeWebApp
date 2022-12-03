@@ -1,8 +1,6 @@
 package com.in28minutes.springboot.MyFirstWebApplication.models;
 
-
-import jakarta.persistence.*;
-
+import javax.persistence.*;
 import java.util.List;
 
 @Entity

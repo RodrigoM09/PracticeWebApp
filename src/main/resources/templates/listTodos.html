@@ -1,5 +1,9 @@
-        <%@include file="common/header.jspf"%>
-        <%@include file="common/navigation.jspf"%>
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <div th:replace="partials/posts-partials.html :: myheader('Posts')"></div>
+</head>
+        <nav th:replace="partials/posts-partials.html :: mynav"></nav>
         <%--CONTAINER WITH TODOS TABLE--------------------------------------------------------%>
         <div class="container">
             <div>Welcome, ${name}!</div><br>
@@ -16,7 +20,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <c:forEach items="${todos}" var="todo">
+                    <div th:each="Todo : ${todo}" var="todo">
                         <tr>
                             <td>${todo.description}</td>
                             <td>${todo.targetDate}</td>
@@ -24,10 +28,12 @@
                             <td><a href="update-todo?id=${todo.id}" class="btn btn-success">Update</a></td>
                             <td><a href="delete-todo?id=${todo.id}" class="btn btn-warning">DELETE</a></td>
                         </tr>
-                    </c:forEach>
+                    </div>
                 </tbody>
             </table>
             <a href="add-todo" class="btn btn-success">Add Todo</a>
         </div>
         <%--END OF TODOS CONTAINER---------------------------------------------------------------------%>
-        <%@ include file="common/footer.jspf"%>
+<div th:replace="partials/posts-partials.html :: foot"></div>
+</body>
+</html>

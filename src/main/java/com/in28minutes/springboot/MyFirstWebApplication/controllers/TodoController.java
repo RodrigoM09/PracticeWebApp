@@ -2,13 +2,13 @@ package com.in28minutes.springboot.MyFirstWebApplication.controllers;
 
 import com.in28minutes.springboot.MyFirstWebApplication.models.Todo;
 import com.in28minutes.springboot.MyFirstWebApplication.services.TodoService;
-import jakarta.validation.Valid;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -44,7 +44,7 @@ public class TodoController {
     @PostMapping("add-todo")
     public String addNewTodo(ModelMap model, @Valid Todo todo, BindingResult result) {
         if(result.hasErrors()){
-            return "todo";
+            return "redirect:todo";
         }
         String username = getLoggedInUsername(model);
         todoService.addTodo(username, todo.getDescription(),

@@ -2,7 +2,6 @@ package com.in28minutes.springboot.MyFirstWebApplication.controllers;
 
 import com.in28minutes.springboot.MyFirstWebApplication.models.Todo;
 import com.in28minutes.springboot.MyFirstWebApplication.repositories.TodoRepository;
-import jakarta.validation.Valid;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -10,6 +9,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.time.LocalDate;
 import java.util.List;
 

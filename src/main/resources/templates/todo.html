@@ -1,5 +1,9 @@
-            <%@include file="common/header.jspf"%>
-            <%@include file="common/navigation.jspf"%>
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <div th:replace="partials/posts-partials.html :: myheader('Posts')"></div>
+</head>
+<nav th:replace="partials/posts-partials.html :: mynav"></nav>
             <div class="container">
 
                 <h1>Enter Todo Details</h1>
@@ -25,9 +29,11 @@
                     <input type="submit" class="btn btn-success">
                 </form:form>
             </div>
-            <%@include file="common/footer.jspf"%>
+            <div th:replace="partials/posts-partials.html :: foot"></div>
             <script type="text/javascript">
                 $('#targetDate').datepicker({
                     format: 'yyyy-mm-dd'
                 });
             </script>
+</body>
+</html>

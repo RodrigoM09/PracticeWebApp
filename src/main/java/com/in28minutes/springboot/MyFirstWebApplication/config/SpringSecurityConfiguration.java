@@ -1,8 +1,6 @@
-package com.in28minutes.springboot.MyFirstWebApplication.security;
+package com.in28minutes.springboot.MyFirstWebApplication.config;
 
 
-import jakarta.servlet.Filter;
-import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -23,42 +21,42 @@ public class SpringSecurityConfiguration {
 //    InMemoryUserDetailsManager
 //    InMemoryUserDetailsManager(UserDetails... users)
 
-        @Bean
-        public  InMemoryUserDetailsManager createUserDetailsManager(){
+    @Bean
+    public InMemoryUserDetailsManager createUserDetailsManager() {
 
-            UserDetails userDetails1 = createNewUser("Rodrigo", "genius");
-            UserDetails userDetails2 = createNewUser("Marquez", "SuperGenius");
-            return new InMemoryUserDetailsManager(userDetails1, userDetails2);
-        }
+        UserDetails userDetails1 = createNewUser("Rodrigo", "genius");
+        UserDetails userDetails2 = createNewUser("Marquez", "SuperGenius");
+        return new InMemoryUserDetailsManager(userDetails1, userDetails2);
+    }
 
     private UserDetails createNewUser(String userName, String password) {
         Function<String, String> passwordEncoder
                 = input -> passwordEncoder().encode(input);
 
         UserDetails userDetails = User.builder()
-        .passwordEncoder(passwordEncoder)
-        .username(userName)
-        .password(password)
-        .roles("USER", "ADMIN")
-        .build();
+                .passwordEncoder(passwordEncoder)
+                .username(userName)
+                .password(password)
+                .roles("USER", "ADMIN")
+                .build();
         return userDetails;
     }
 
     @Bean
-        public PasswordEncoder passwordEncoder(){
-            return new BCryptPasswordEncoder();
-        }
+    SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
+        http.authorizeHttpRequests()
+                .antMatchers("/todo", "/list-todos", "/add-todo", "/delete-todo", "/update-todo")
+                .authenticated()
+                .antMatchers("/").permitAll()
+                .and().formLogin().loginPage("/login").defaultSuccessUrl("/list-todos")
+                .and().logout()
+                .and().httpBasic();
+        return http.build();
+    }
 
-        @Bean
-        public SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
-
-            http.authorizeHttpRequests(
-                    auth -> auth.anyRequest().authenticated());
-            http.formLogin(withDefaults());
-
-            http.csrf().disable();
-            http.headers().frameOptions().disable();
-
-            return http.build();
-        }
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
 }
+
