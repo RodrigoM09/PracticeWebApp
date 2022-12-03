@@ -1,5 +1,6 @@
-package com.in28minutes.springboot.MyFirstWebApplication.todo;
+package com.in28minutes.springboot.MyFirstWebApplication.services;
 
+import com.in28minutes.springboot.MyFirstWebApplication.models.Todo;
 import jakarta.validation.Valid;
 import org.springframework.stereotype.Service;
 

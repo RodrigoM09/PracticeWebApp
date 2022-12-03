@@ -1,6 +1,7 @@
-package com.in28minutes.springboot.MyFirstWebApplication.todo;
+package com.in28minutes.springboot.MyFirstWebApplication.models;
 
 
+import com.in28minutes.springboot.MyFirstWebApplication.models.User;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;

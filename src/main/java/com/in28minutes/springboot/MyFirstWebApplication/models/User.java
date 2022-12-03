@@ -1,4 +1,4 @@
-package com.in28minutes.springboot.MyFirstWebApplication.todo;
+package com.in28minutes.springboot.MyFirstWebApplication.models;
 
 
 import jakarta.persistence.*;
