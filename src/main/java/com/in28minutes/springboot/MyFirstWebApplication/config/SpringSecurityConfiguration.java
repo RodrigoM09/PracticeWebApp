@@ -20,27 +20,27 @@ import static org.springframework.security.config.Customizer.withDefaults;
 public class SpringSecurityConfiguration {
 //    InMemoryUserDetailsManager
 //    InMemoryUserDetailsManager(UserDetails... users)
-
-    @Bean
-    public InMemoryUserDetailsManager createUserDetailsManager() {
-
-        UserDetails userDetails1 = createNewUser("Rodrigo", "genius");
-        UserDetails userDetails2 = createNewUser("Marquez", "SuperGenius");
-        return new InMemoryUserDetailsManager(userDetails1, userDetails2);
-    }
-
-    private UserDetails createNewUser(String userName, String password) {
-        Function<String, String> passwordEncoder
-                = input -> passwordEncoder().encode(input);
-
-        UserDetails userDetails = User.builder()
-                .passwordEncoder(passwordEncoder)
-                .username(userName)
-                .password(password)
-                .roles("USER", "ADMIN")
-                .build();
-        return userDetails;
-    }
+//
+//    @Bean
+//    public InMemoryUserDetailsManager createUserDetailsManager() {
+//
+//        UserDetails userDetails1 = createNewUser("Rodrigo", "genius");
+//        UserDetails userDetails2 = createNewUser("Marquez", "SuperGenius");
+//        return new InMemoryUserDetailsManager(userDetails1, userDetails2);
+//    }
+//
+//    private UserDetails createNewUser(String userName, String password) {
+//        Function<String, String> passwordEncoder
+//                = input -> passwordEncoder().encode(input);
+//
+//        UserDetails userDetails = User.builder()
+//                .passwordEncoder(passwordEncoder)
+//                .username(userName)
+//                .password(password)
+//                .roles("USER", "ADMIN")
+//                .build();
+//        return userDetails;
+//    }
 
     @Bean
     SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {

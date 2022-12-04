@@ -12,5 +12,3 @@ values (10004, 'Rodrigo', 'Get AWS Certified', CURRENT_DATE(), false);
 
 USE todo_db;
 
-insert into users (id, email, password, username)
-VALUES (1,'rodrigo@rodrigo.com','password','rodrigo')
