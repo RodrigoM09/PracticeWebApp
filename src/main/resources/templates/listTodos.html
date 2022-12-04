@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
-<head th:replace="partials/posts-partials.html :: myheader('My List Of Todos')">
+<head th:replace="~{partials/todos-partials.html :: myheader('My List Of Todos')}">
     <title id="pageTitle"></title>
 </head>
 <body>
-        <nav th:replace="partials/posts-partials.html :: mynav"></nav>
+        <nav th:replace="~{partials/todos-partials.html :: mynav}"></nav>
 <!--        CONTAINER WITH TODOS TABLE------------------------------------------------------------------------->
         <div class="container">
             <div>Welcome, ${name}!</div><br>
@@ -33,6 +33,6 @@
             <a href="/add-todo" class="btn btn-success">Add Todo</a>
         </div>
 <!--        END OF TODOS CONTAINER----------------------------------------------------------------->
-<div th:replace="partials/posts-partials.html :: footer"></div>
+<div th:replace="~{partials/todos-partials.html :: footer}"></div>
 </body>
 </html>

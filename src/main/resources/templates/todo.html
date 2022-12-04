@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html" lang="en">
-<head th:replace="partials/posts-partials.html :: myheader('Create a New Todo')">
+<head th:replace="~{partials/todos-partials.html :: myheader('Create a New Todo')}">
     <title id="pageTitle"></title>
 </head>
 <body>
-<nav th:replace="partials/posts-partials.html :: mynav"></nav>
+<nav th:replace="~{partials/todos-partials.html :: mynav}"></nav>
             <div class="container">
 
                 <h1>Enter Todo Details</h1>
@@ -30,7 +30,7 @@
                     <input type="submit" class="btn btn-success">
                 </form>
             </div>
-            <div th:replace="partials/posts-partials.html :: footer"></div>
+            <div th:replace="~{partials/todos-partials.html :: footer}"></div>
             <script type="text/javascript">
                 $('#targetDate').datepicker({
                     format: 'yyyy-mm-dd'

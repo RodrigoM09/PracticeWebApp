@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
-<head th:replace="partials/posts-partials.html :: myheader('Welcome to Todos')">
+<head th:replace="partials/todos-partials.html :: myheader('Welcome to Todos')">
     <title id="pageTitle"></title>
 </head>
 <body>
-<nav th:replace="partials/posts-partials.html :: mynav"></nav>
+<nav th:replace="partials/todos-partials.html :: mynav"></nav>
     <div class="container">
         <div>Welcome, ${name}!</div>
         <div><a href="/list-todos">Manage your todos</a></div>
     </div>
-<div th:replace="partials/posts-partials.html :: footer"></div>
+<div th:replace="partials/todos-partials.html :: footer"></div>
 </body>
 </html>
