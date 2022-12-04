@@ -17,13 +17,13 @@ public class WelcomeController {
 //        this.authenticationService = authenticationService;
 //    }
 
-    @GetMapping("/")
+    @GetMapping("/Welcome")
     public String goToWelcome(ModelMap model){
-        model.put("name", getLoggedinUsername());
+        model.put("name", getLoggedInUsername());
         return "Welcome";
     }
 
-    private String getLoggedinUsername(){
+    private String getLoggedInUsername(){
         Authentication authentication =
             SecurityContextHolder.getContext().getAuthentication();
        return authentication.getName();

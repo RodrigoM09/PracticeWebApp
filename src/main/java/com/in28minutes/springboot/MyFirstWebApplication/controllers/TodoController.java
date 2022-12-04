@@ -1,7 +1,7 @@
 package com.in28minutes.springboot.MyFirstWebApplication.controllers;
 
 import com.in28minutes.springboot.MyFirstWebApplication.models.Todo;
-import com.in28minutes.springboot.MyFirstWebApplication.services.TodoService;
+import com.in28minutes.springboot.MyFirstWebApplication.services.TodoUserDetailsService;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.ui.ModelMap;
@@ -15,12 +15,12 @@ import java.util.List;
 //@Controller
 @SessionAttributes("name")
 public class TodoController {
-    public TodoController(TodoService todoService) {
+    public TodoController(TodoUserDetailsService todoService) {
         super();
         this.todoService = todoService;
     }
 
-    private TodoService todoService;
+    private TodoUserDetailsService todoService;
 
     // LIST ALL TODOS------------------------------------------------->
     @RequestMapping("list-todos")

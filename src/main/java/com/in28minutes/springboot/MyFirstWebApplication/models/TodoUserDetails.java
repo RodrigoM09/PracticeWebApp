@@ -5,7 +5,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 
-public class SpringBlogUserDetails extends User implements UserDetails {
+public class TodoUserDetails extends User implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -32,9 +32,9 @@ public class SpringBlogUserDetails extends User implements UserDetails {
         return true;
     }
 
-    public SpringBlogUserDetails(){}
+    public TodoUserDetails(){}
 
-    public SpringBlogUserDetails(long id, String username, String email, String password) {
+    public TodoUserDetails(long id, String username, String email, String password) {
         super(id, username, email, password);
     }
 }
