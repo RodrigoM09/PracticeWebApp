@@ -17,7 +17,23 @@ public class Todo {
             this.done = done;
         }
 
-        @Id
+        public Todo(String username, String description, LocalDate targetDate, boolean done, User user) {
+            this.username = username;
+            this.description = description;
+            this.targetDate = targetDate;
+            this.done = done;
+            this.user = user;
+        }
+
+        public Todo(int id, String description, LocalDate targetDate, boolean done, User user) {
+            this.id = id;
+            this.description = description;
+            this.targetDate = targetDate;
+            this.done = done;
+            this.user = user;
+        }
+
+    @Id
         @GeneratedValue
         private int id;
         @Column
