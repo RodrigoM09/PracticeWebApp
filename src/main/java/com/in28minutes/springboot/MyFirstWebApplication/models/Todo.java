@@ -9,31 +9,14 @@ import java.time.LocalDate;
 @Entity
 public class Todo {
 
-        public Todo(int id, String username, String description, LocalDate targetDate, boolean done) {
-            this.id = id;
-            this.username = username;
-            this.description = description;
-            this.targetDate = targetDate;
-            this.done = done;
-        }
-
-        public Todo(String username, String description, LocalDate targetDate, boolean done, User user) {
-            this.username = username;
+        public Todo(String description, String targetDate, boolean done, User user) {
             this.description = description;
             this.targetDate = targetDate;
             this.done = done;
             this.user = user;
         }
 
-        public Todo(int id, String description, LocalDate targetDate, boolean done, User user) {
-            this.id = id;
-            this.description = description;
-            this.targetDate = targetDate;
-            this.done = done;
-            this.user = user;
-        }
-
-    @Id
+        @Id
         @GeneratedValue
         private int id;
         @Column
@@ -42,7 +25,7 @@ public class Todo {
         @Column
         private String description;
         @Column
-        private LocalDate targetDate;
+        private String targetDate;
         @Column
         private boolean done;
 
@@ -86,11 +69,11 @@ public class Todo {
         this.description = description;
     }
 
-    public LocalDate getTargetDate() {
+    public String getTargetDate() {
         return targetDate;
     }
 
-    public void setTargetDate(LocalDate targetDate) {
+    public void setTargetDate(String targetDate) {
         this.targetDate = targetDate;
     }
 

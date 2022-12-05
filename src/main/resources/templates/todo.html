@@ -9,24 +9,19 @@
 
                 <h1>Enter Todo Details</h1>
 
-                <form th:action="@{/add-todo}" method="post">
-
+                <form th:action="@{/add-todo}" th:method="post" th:object="${todo}">
 <!--                    DESCRIPTION LABEL AND INPUT------------------------------------->
                     <fieldset class="mb-3">
-                        <label th:path="description" for="description">Description:</label>
-                        <input type="text" th:path="description" required="required" id="description"/>
-                        <span id="description.errors" class="error">Description is required</span>
+                        <label for="description">Description:</label>
+                        <input type="text" th:field="*{description}" id="description"/>
                     </fieldset>
-
 <!--                    TARGET DATE LABEL AND INPUT------------------------------------->
                     <fieldset class="mb-3">
-                        <label th:path="targetDate" for="targetDate">Target Date:</label>
-                        <input type="text" th:path="targetDate" id="targetDate" required="required"/>
-                        <span id="targetDate.errors" class="error">Target date is required</span>
+                        <label for="targetDate">Target Date:</label>
+                        <input type="date" th:field="*{targetDate}" id="targetDate"/>
                     </fieldset>
-
-                    <input type="hidden" th:path="done"/>
-                    <input type="hidden" th:path="id"/>
+                    <input type="hidden" th:field="*{done}"/>
+                    <input type="hidden" th:field="*{id}"/>
                     <input type="submit" class="btn btn-success">
                 </form>
             </div>

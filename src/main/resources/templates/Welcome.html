@@ -6,7 +6,7 @@
 <body>
 <nav th:replace="partials/todos-partials.html :: mynav"></nav>
     <div class="container">
-        <div>Welcome, ${name}!</div>
+        <div>Welcome,<span th:text="${name}"></span></div>
         <div><a href="/list-todos">Manage your todos</a></div>
     </div>
 <div th:replace="partials/todos-partials.html :: footer"></div>

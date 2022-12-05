@@ -7,7 +7,7 @@
         <nav th:replace="~{partials/todos-partials.html :: mynav}"></nav>
 <!--        CONTAINER WITH TODOS TABLE------------------------------------------------------------------------->
         <div class="container">
-            <div>Welcome, ${name}!</div><br>
+            <div>Welcome, <span th:text="${name}"></span>!</div><br>
             <hr>
             <h1>Your todos:</h1>
             <table class="table">
@@ -21,12 +21,12 @@
                     </tr>
                 </thead>
                 <tbody>
-                        <tr th:each="todo : ${todos}">
+                        <tr th:each="todo : ${allTodos}">
                             <td th:text="${todo.description}"></td>
                             <td th:text="${todo.targetDate}"></td>
                             <td th:text="${todo.done}"></td>
-                            <td><a th:if="${todo.user.id} == ${#authentication.principal.id}" class="btn btn-success">Update</a></td>
-                            <td><a th:if="${todo.user.id} == ${#authentication.principal.id}" class="btn btn-warning">DELETE</a></td>
+                            <td><a th:if="${todo.user.id} == ${#authentication.principal.id}" th:href="@{/{id}/update-todo (id=${todo.id})}" class="btn btn-success">Update</a></td>
+                            <td><a th:if="${todo.user.id} == ${#authentication.principal.id}" th:href="@{/{id}/delete-todo (id=${todo.id})}" class="btn btn-warning">DELETE</a></td>
                         </tr>
                 </tbody>
             </table>
