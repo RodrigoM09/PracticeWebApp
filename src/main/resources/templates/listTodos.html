@@ -21,12 +21,12 @@
                     </tr>
                 </thead>
                 <tbody>
-                        <tr th:each="todo : ${allTodos}">
+                        <tr th:if="${todo.user.id} == ${#authentication.principal.id}" th:each="todo : ${allTodos}">
                             <td th:text="${todo.description}"></td>
                             <td th:text="${todo.targetDate}"></td>
                             <td th:text="${todo.done}"></td>
-                            <td><a th:if="${todo.user.id} == ${#authentication.principal.id}" th:href="@{/{id}/update-todo (id=${todo.id})}" class="btn btn-success">Update</a></td>
-                            <td><a th:if="${todo.user.id} == ${#authentication.principal.id}" th:href="@{/{id}/delete-todo (id=${todo.id})}" class="btn btn-warning">DELETE</a></td>
+                            <td><a th:href="@{/{id}/update-todo (id=${todo.id})}" class="btn btn-success">Update</a></td>
+                            <td><a th:href="@{/{id}/delete-todo (id=${todo.id})}" class="btn btn-warning">DELETE</a></td>
                         </tr>
                 </tbody>
             </table>
