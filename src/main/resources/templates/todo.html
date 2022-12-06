@@ -20,7 +20,8 @@
                         <label for="targetDate">Target Date:</label>
                         <input type="date" th:field="*{targetDate}" id="targetDate"/>
                     </fieldset>
-                    <input type="hidden" th:field="*{done}"/>
+                    <label for="isDone">Is this done?</label>
+                    <input type="checkbox" th:field="*{done}" id="isDone"/><br>
                     <input type="hidden" th:field="*{id}"/>
                     <input type="submit" class="btn btn-success">
                 </form>
