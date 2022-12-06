@@ -52,15 +52,17 @@ public class TodoControllerJpa {
         User user = userDao.findById(userId);
         todo.setUser(user);
         todoDao.save(todo);
-        return "redirect:list-todos";
+        return "redirect:/list-todos";
     }
 
 
     // DELETE TODO METHOD ----------------------------------------->
     @RequestMapping("/{id}/delete-todo")
-    public String deleteTodo(@PathVariable int id){
+    public String deleteTodo(@PathVariable int id, @ModelAttribute Todo todo){
+        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        todo.setUser(user);
         todoDao.deleteById(id);
-        return "redirect:list-todos";
+        return "redirect:/list-todos";
     }
 
     // UPDATE TODO METHODS ------------------------------>
@@ -83,7 +85,7 @@ public class TodoControllerJpa {
         User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         todo.setUser(user);
         todoDao.save(todo);
-        return "redirect:list-todos";
+        return "redirect:/list-todos";
     }
 
     @PostMapping("logout")
