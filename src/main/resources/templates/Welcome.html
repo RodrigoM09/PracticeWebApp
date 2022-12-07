@@ -6,13 +6,17 @@
 <body>
 <nav th:replace="partials/todos-partials.html :: mynav"></nav>
     <div class="container">
-        <div>Welcome, <span th:text="${name}"></span></div>
-        <div><a href="/list-todos">Manage your todos</a></div>
+        <div>Welcome, <span th:text="${name}"></span>!</div>
+<!--        <div><a href="/list-todos">Manage your todos</a></div>-->
     </div>
     <br>
-    <p class="ms-5">To-do lists offer a way to increase productivity, stopping you from forgetting things,<br>
-        helps prioritise tasks, manage tasks effectively, use time wisely and<br>
-        improve time management as well as workflow.</p>
+    <p class="ms-5">To-do lists offer a way to increase productivity.<br>
+        Stop forgetting things,<br>
+        prioritise your tasks,<br>
+        manage your tasks effectively,<br>
+        use your time wisely and<br>
+        improve your time management as well as workflow.</p>
+
 <div th:replace="partials/todos-partials.html :: footer"></div>
 </body>
 </html>
