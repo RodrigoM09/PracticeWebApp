@@ -1,4 +1,4 @@
-package com.in28minutes.springboot.MyFirstWebApplication.models;
+package com.TodoApp.springboot.MyFirstWebApplication.models;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

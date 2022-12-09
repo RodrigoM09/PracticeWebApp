@@ -1,4 +1,4 @@
-package com.in28minutes.springboot.MyFirstWebApplication.controllers;
+package com.TodoApp.springboot.MyFirstWebApplication.controllers;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;

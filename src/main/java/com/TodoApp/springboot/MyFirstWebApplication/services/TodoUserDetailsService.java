@@ -1,20 +1,16 @@
-package com.in28minutes.springboot.MyFirstWebApplication.services;
+package com.TodoApp.springboot.MyFirstWebApplication.services;
 
-import com.in28minutes.springboot.MyFirstWebApplication.models.Todo;
-import com.in28minutes.springboot.MyFirstWebApplication.models.TodoUserDetails;
-import com.in28minutes.springboot.MyFirstWebApplication.models.User;
-import com.in28minutes.springboot.MyFirstWebApplication.repositories.UserRepository;
-import org.springframework.security.core.context.SecurityContextHolder;
+import com.TodoApp.springboot.MyFirstWebApplication.models.Todo;
+import com.TodoApp.springboot.MyFirstWebApplication.models.TodoUserDetails;
+import com.TodoApp.springboot.MyFirstWebApplication.models.User;
+import com.TodoApp.springboot.MyFirstWebApplication.repositories.UserRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import javax.validation.Valid;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Predicate;
 
 @Service
 public class TodoUserDetailsService implements UserDetailsService {

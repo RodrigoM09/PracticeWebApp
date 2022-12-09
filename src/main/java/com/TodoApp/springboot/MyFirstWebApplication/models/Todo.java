@@ -1,10 +1,9 @@
-package com.in28minutes.springboot.MyFirstWebApplication.models;
+package com.TodoApp.springboot.MyFirstWebApplication.models;
 
 
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
-import java.time.LocalDate;
 
 @Entity
 public class Todo {

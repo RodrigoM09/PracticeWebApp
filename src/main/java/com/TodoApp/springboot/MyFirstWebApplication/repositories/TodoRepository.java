@@ -1,7 +1,7 @@
-package com.in28minutes.springboot.MyFirstWebApplication.repositories;
+package com.TodoApp.springboot.MyFirstWebApplication.repositories;
 
 
-import com.in28minutes.springboot.MyFirstWebApplication.models.Todo;
+import com.TodoApp.springboot.MyFirstWebApplication.models.Todo;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

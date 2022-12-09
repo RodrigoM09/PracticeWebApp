@@ -1,8 +1,8 @@
-package com.in28minutes.springboot.MyFirstWebApplication.controllers;
+package com.TodoApp.springboot.MyFirstWebApplication.controllers;
 
 
-import com.in28minutes.springboot.MyFirstWebApplication.models.User;
-import com.in28minutes.springboot.MyFirstWebApplication.repositories.UserRepository;
+import com.TodoApp.springboot.MyFirstWebApplication.models.User;
+import com.TodoApp.springboot.MyFirstWebApplication.repositories.UserRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

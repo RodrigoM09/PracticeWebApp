@@ -1,19 +1,15 @@
-package com.in28minutes.springboot.MyFirstWebApplication.controllers;
+package com.TodoApp.springboot.MyFirstWebApplication.controllers;
 
-import com.in28minutes.springboot.MyFirstWebApplication.models.Todo;
-import com.in28minutes.springboot.MyFirstWebApplication.models.User;
-import com.in28minutes.springboot.MyFirstWebApplication.repositories.TodoRepository;
-import com.in28minutes.springboot.MyFirstWebApplication.repositories.UserRepository;
-import org.springframework.security.core.Authentication;
+import com.TodoApp.springboot.MyFirstWebApplication.models.Todo;
+import com.TodoApp.springboot.MyFirstWebApplication.models.User;
+import com.TodoApp.springboot.MyFirstWebApplication.repositories.TodoRepository;
+import com.TodoApp.springboot.MyFirstWebApplication.repositories.UserRepository;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
-import java.time.LocalDate;
 import java.util.List;
 
 @Controller
